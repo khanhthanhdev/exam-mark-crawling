@@ -7,12 +7,12 @@ const parseField = (str, field) =>
 const parsed = students
   .map((student) => ({
     ...student,
-    total: parseField(student.mark, "Tổng điểm XT:"),
-    literature: parseField(student.mark, "Ngữ văn:"),
-    math: parseField(student.mark, "Toán:"),
-    english: parseField(student.mark, "Ngoại ngữ:"),
-    professional1: parseField(student.mark, "Chuyên 1:"),
-    professional2: parseField(student.mark, "Chuyên 2:"),
+    total: parseField(student.mark, "Total:"),
+    literature: parseField(student.mark, "Liter:"),
+    math: parseField(student.mark, "Math:"),
+    english: parseField(student.mark, "Lang:"),
+    professional1: parseField(student.mark, "Ex 1:"),
+    professional2: parseField(student.mark, "Ex 2:"),
   }))
   .filter((i) => i.total);
 
@@ -23,6 +23,10 @@ console.log(
   parsed.filter((i) => i.professional1 || i.professional2).length
 );
 
+console.log(
+  "Số người có điểm trên 47: ",
+  parsed.filter((i) => i.total >= 47).length
+)
 console.log(
   "Số người điểm văn >= 9",
   parsed.filter((i) => i.literature >= 9).length
