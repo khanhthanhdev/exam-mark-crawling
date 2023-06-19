@@ -15,6 +15,6 @@ const parsed = students
 
 const marks = parsed.map((i) => i.total);
 
-const max = Math.max(...marks);
+const max = Math.min(...marks);
 
 console.log(parsed.filter((student) => student.total === max));
