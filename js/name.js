@@ -1,5 +1,5 @@
 import fs from "fs";
-const students = JSON.parse(fs.readFileSync("./data.json"));
+const students = JSON.parse(fs.readFileSync("../data/data.json"));
 
 (() => {
   const group = students.reduce((acc, student) => {

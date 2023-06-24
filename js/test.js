@@ -32,7 +32,7 @@ while (String(count).length <= 6) {
 
   count++;
 
-  fs.writeFileSync("./data.json", JSON.stringify(result, null, 2));
+  fs.writeFileSync("./data/data2023.json", JSON.stringify(result, null, 2));
 
   console.log(
     `Done ${count * 10}-${count * 10 + 9}. Got: ${filtered.length}. Total: ${
