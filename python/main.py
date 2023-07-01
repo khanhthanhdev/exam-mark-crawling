@@ -6,8 +6,8 @@ def get_token(id, type="01"):
 
     headers = {
         "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "requestverificationtoken": "CfDJ8GaVrXyqbnxOu3wE-OMJ5pjzIffrAdNleB_FuVzhXbu7XWquMZ_flWEGEnWahe6haWBwWXE_aKeG8rFv6gFgr8PzVGV5CdKtlMTbukctHTfpxIUZR3Eq8y8EMwF9xzszwMaJBywVKBrsOncjXYx1dy4",
-        "cookie": "BIGipServerPool_TSDC_HN=1932005548.34304.0000; .AspNetCore.Antiforgery.68HoDSos0ic=CfDJ8GaVrXyqbnxOu3wE-OMJ5piXLNbeT7pu3R4hkfmQcY221KFa73heDYv0hypBflxGvqRCGb85CnB9G6r_FyLRvlnHPzLL1ZNMTx6nsJffRWctPPH2V4XKcvrqBrGnljrguHcH_ttF1L2pRT6-S7lV-qs",
+        "requestverificationtoken": "CfDJ8CjI4AkC0xlNiBlQXi0796pPe6spT-DfbWy4y6fzzNzKn6gTNWqRaiTYsB6cq9mcBCvG0RDSZF5_7eeno9ZwSU8bYYF4FaC2fPNPde5hishfnDuriO0mixSjHM1D3jKiFIKD0PCx9zTEJ_BkdfjdnGg",
+        "cookie": "BIGipServerPool_TSDC_HN=1915228332.34048.0000; .AspNetCore.Antiforgery.68HoDSos0ic=CfDJ8CjI4AkC0xlNiBlQXi0796pPe6spT-DfbWy4y6fzzNzKn6gTNWqRaiTYsB6cq9mcBCvG0RDSZF5_7eeno9ZwSU8bYYF4FaC2fPNPde5hishfnDuriO0mixSjHM1D3jKiFIKD0PCx9zTEJ_BkdfjdnGg",
     }
 
     data = {
@@ -32,3 +32,10 @@ def get_mark_from_token(token):
     name = dom.select(".box-thong-tin-diem .row")[2].find("b").text
 
     return {"name": name, "mark": mark}
+
+
+userid = input("Enter your student ID: ")
+mark = get_mark_from_token(get_token(userid))
+
+print(f"Your mark is: {mark['mark']}")
+print(f"Your name is: {mark['name']}")
