@@ -1,7 +1,6 @@
 import requests
 import json
 import time
-import concurrent.futures
 import threading
 reqUrl = "https://hanoimoi.vn/api/getdiemthi2023"
 
